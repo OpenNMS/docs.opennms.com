@@ -28,6 +28,9 @@ jobs:
   publish-docs:
     executor: publish-executor
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "22:19:4a:22:07:4f:c1:0d:f3:fd:47:80:fb:9f:29:04"
       - attach_workspace:
           at: ~/
       - run:
@@ -35,6 +38,10 @@ jobs:
           command: |
             sudo apt-get update
             sudo apt-get -y install rsync
+      - run:
+          name: Check connection to docs.opennms.com
+          command: |
+            ssh docs.opennms.com ls -l /var/www
 
 workflows:
   build-deploy:
