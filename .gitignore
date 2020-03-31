@@ -1,0 +1,19 @@
+# Antora
+.cache/
+public/
+build/
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# IntelliJ IDEA
+.idea/
+*.iws
+
+# VIM
+*.swp

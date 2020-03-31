@@ -1,0 +1,30 @@
+---
+version: 2.1
+
+executors:
+  docs-executor:
+    docker:
+      - image: antora/antora:2.2.0
+
+jobs:
+  build-docs:
+    executor: docs-executor
+    steps:
+      - checkout
+      - run:
+          name: Generate HTML output for documentation
+          command: |
+            antora generate antora-playbook.yml
+      - store_artifacts:
+          path: build/site.zip
+          destination: site.zip
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - project/public
+            - project/build
+
+workflows:
+  build-deploy:
+    jobs:
+      - build-docs
