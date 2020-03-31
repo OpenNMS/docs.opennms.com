@@ -5,7 +5,9 @@ executors:
   docs-executor:
     docker:
       - image: antora/antora:2.2.0
-
+  publish-executor:
+    docker:
+      - image: circleci/buildpack-deps:eoan
 jobs:
   build-docs:
     executor: docs-executor
@@ -23,8 +25,25 @@ jobs:
           paths:
             - project/public
             - project/build
+  publish-docs:
+    executor: publish-executor
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: Install rsync dependency
+          command: |
+            sudo apt-get update
+            sudo apt-get -y install rsync
 
 workflows:
   build-deploy:
     jobs:
       - build-docs
+      - publish-docs:
+          requires:
+            - build-docs
+          filters:
+            branches:
+              only:
+                - master
