@@ -39,6 +39,10 @@ jobs:
             sudo apt-get update
             sudo apt-get -y install rsync
       - run:
+          name: Add SSH server fingerprint
+          command: |
+            echo 'docs.opennms.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBMsc8yB7l3htLVhh7LEOcbxV1lus/bO5cc9BOX+2EEBtsbsPMSZVELTN1R1wFS/6watgPDwFcswfD3lUe8ymxZo=' >> ~/.ssh/known_hosts
+      - run:
           name: Check connection to docs.opennms.com
           command: |
             ssh docs.opennms.com ls -l /var/www
