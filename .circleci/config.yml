@@ -49,13 +49,22 @@ jobs:
             rsync -a --delete -e ssh public/ mirror@mirror.opennms.eu:/blackhole/mirror/opennms/docs/opennms
 
 workflows:
-  build-deploy:
+  # Triggered by every commit to this repository
+  commit:
+    jobs:
+      - build-docs
+
+  # Build and publish docs from master every night
+  nightly:
+    triggers:
+      - schedule:
+          cron: "42 23 * * *"
+          filters:
+            branches:
+              only:
+                - master
     jobs:
       - build-docs
       - publish-docs:
           requires:
             - build-docs
-          filters:
-            branches:
-              only:
-                - master
