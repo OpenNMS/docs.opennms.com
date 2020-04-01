@@ -42,10 +42,11 @@ jobs:
           name: Add SSH server fingerprint
           command: |
             echo 'docs.opennms.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBMsc8yB7l3htLVhh7LEOcbxV1lus/bO5cc9BOX+2EEBtsbsPMSZVELTN1R1wFS/6watgPDwFcswfD3lUe8ymxZo=' >> ~/.ssh/known_hosts
+            echo 'mirror.opennms.eu ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHB5fyiWDKPg8TuzGsgYi/tuQiK5TA639CP6xJLsMVE8W/WAolYUTxKPobO+YV3TLfQzrIKHQgkC3dwQNB+yfm0=' >> ~/.ssh/known_hosts
       - run:
-          name: Check connection to docs.opennms.com
+          name: Push content to the web server
           command: |
-            ssh docs.opennms.com ls -l /var/www
+            rsync -a --delete -e ssh public/ mirror@mirror.opennms.eu:/blackhole/mirror/opennms/docs/opennms
 
 workflows:
   build-deploy:
