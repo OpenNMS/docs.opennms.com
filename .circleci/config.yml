@@ -42,11 +42,10 @@ jobs:
           name: Add SSH server fingerprint
           command: |
             echo 'docs.opennms.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBMsc8yB7l3htLVhh7LEOcbxV1lus/bO5cc9BOX+2EEBtsbsPMSZVELTN1R1wFS/6watgPDwFcswfD3lUe8ymxZo=' >> ~/.ssh/known_hosts
-            echo 'mirror.opennms.eu ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHB5fyiWDKPg8TuzGsgYi/tuQiK5TA639CP6xJLsMVE8W/WAolYUTxKPobO+YV3TLfQzrIKHQgkC3dwQNB+yfm0=' >> ~/.ssh/known_hosts
       - run:
           name: Push content to the web server
           command: |
-            rsync -a --delete -e ssh public/ mirror@mirror.opennms.eu:/blackhole/mirror/opennms/docs/opennms
+            rsync -a --delete -e ssh public/ circleci@docs.opennms.com:/var/www/docs.opennms.com/htdocs
 
 workflows:
   # Triggered by every commit to this repository
