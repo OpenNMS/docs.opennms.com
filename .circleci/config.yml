@@ -52,6 +52,13 @@ workflows:
   commit:
     jobs:
       - build-docs
+      - publish-docs:
+          requires:
+            - build-docs
+          filters:
+            branches:
+              only:
+                - master
 
   # Build and publish docs from master every night
   nightly:
