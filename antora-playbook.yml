@@ -1,4 +1,7 @@
 ---
+runtime:
+  # Set a local antora cache dir for git repositories and UI components
+  cache_dir: ./.cache/antora
 site:
   title: OpenNMS Docs
   # the 404 page and sitemap files only get generated when the url property is set
@@ -9,17 +12,21 @@ content:
   sources:
   # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
   - url: https://github.com/opennms/opennms-helm.git
-    branches: master
+    branches: develop
     start_path: docs
+    tags:
+    - v*
+    - '!v5.0.2'
+    - '!v5.0.1'
+    - '!v5.0.0'
+    - '!v4*'
+    - '!v3*'
+    - '!v2*'
+    - '!v1*'
   - url: https://github.com/OpenNMS/alec.git
     branches: ~
     tags: v*
     start_path: docs
-  - url: https://github.com/no42-org/docs-pris.git
-    branches: develop
-    tags:
-    - v*
-    - '!v1*'
 ui:
   bundle:
     url: https://github.com/opennms-forge/antora-ui-opennms/releases/download/v1.1.0/ui-bundle.zip
