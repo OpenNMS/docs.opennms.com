@@ -17,3 +17,6 @@ build/
 
 # VIM
 *.swp
+
+#OSX
+.DS_Store

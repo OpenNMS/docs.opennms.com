@@ -15,6 +15,11 @@ content:
     branches: ~
     tags: v*
     start_path: docs
+  - url: https://github.com/no42-org/docs-pris.git
+    branches: develop
+    tags:
+    - v*
+    - '!v1*'
 ui:
   bundle:
     url: https://github.com/opennms-forge/antora-ui-opennms/releases/download/v1.1.0/ui-bundle.zip
