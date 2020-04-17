@@ -26,6 +26,8 @@ help:
 	@echo "  native:           Run Antora installed on the local system, default target"
 	@echo "  with-docker:      Run Antora with Docker"
 	@echo "  clean:            Clean all build artifacts in build and public directory"
+	@echo "  clean-cache:      Clear git repository cache and UI components from .cache directory"
+	@echo "  clean-all:        Clean build artifacts and Antora cache"
 	@echo ""
 	@echo "Arguments: "
 	@echo "  DOCKER_ANTORA_IMAGE: Antora Docker image to build the documenation, default: $(DOCKER_ANTORA_IMAGE)"
@@ -52,3 +54,9 @@ with-docker: deps-with-docker
 clean:
 	@echo "Delete build and public artifacts ..."
 	@rm -rf build public
+
+clean-cache:
+	@echo "Clean Antora cache for git repositories and UI components ..."
+	@rm -rf .cache
+
+clean-all: clean clean-cache
