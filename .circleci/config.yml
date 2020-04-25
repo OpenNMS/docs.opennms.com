@@ -14,12 +14,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Antora Lunr site generator
-          command: |
-            npm i -g antora-lunr
-      - run:
           name: Generate HTML output for documentation
           command: |
+            npm i -g antora-site-generator-lunr
             DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr NODE_PATH="$(npm -g root)" antora --generator antora-site-generator-lunr --stacktrace generate antora-playbook.yml
       - store_artifacts:
           path: build/site.zip
