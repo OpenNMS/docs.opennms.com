@@ -4,7 +4,7 @@ version: 2.1
 executors:
   docs-executor:
     docker:
-      - image: antora/antora:2.2.0
+      - image: antora/antora:2.3.0
   publish-executor:
     docker:
       - image: circleci/buildpack-deps:eoan
@@ -14,9 +14,13 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install Antora Lunr site generator
+          command: |
+            npm i -g antora-lunr
+      - run:
           name: Generate HTML output for documentation
           command: |
-            antora --stacktrace generate antora-playbook.yml
+            DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr NODE_PATH="$(npm -g root)" antora --generator antora-site-generator-lunr --stacktrace generate antora-playbook.yml
       - store_artifacts:
           path: build/site.zip
           destination: site.zip
