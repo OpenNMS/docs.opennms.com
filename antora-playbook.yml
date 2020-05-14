@@ -23,7 +23,7 @@ content:
     - '!v2*'
     - '!v1*'
   - url: https://github.com/OpenNMS/alec.git
-    branches: ~
+    branches: develop
     tags: v*
     start_path: docs
 ui:
