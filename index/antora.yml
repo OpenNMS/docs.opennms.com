@@ -1,0 +1,5 @@
+name: index
+version: '1.0.0'
+title: Documentation
+nav:
+  - modules/ROOT/nav.adoc

@@ -6,10 +6,14 @@ site:
   title: OpenNMS // Docs
   # the 404 page and sitemap files only get generated when the url property is set
   url: https://docs.opennms.org
-  start_page: helm::index.adoc
+  start_page: index::welcome.adoc
   robots: allow
 content:
   sources:
+  # Generic start page
+  - url: .
+    branches: HEAD
+    start_path: index
   # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
   - url: https://github.com/opennms/opennms-helm.git
     branches: develop
