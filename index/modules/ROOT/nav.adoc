@@ -1,2 +1,0 @@
-.Hello World!
-* xref:index:index.adoc[Welcome]
