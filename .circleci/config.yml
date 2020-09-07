@@ -4,7 +4,7 @@ version: 2.1
 executors:
   docs-executor:
     docker:
-      - image: antora/antora:2.3.0
+      - image: antora/antora:2.3.3
   publish-executor:
     docker:
       - image: circleci/buildpack-deps:eoan
