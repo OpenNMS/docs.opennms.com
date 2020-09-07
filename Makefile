@@ -7,7 +7,7 @@
 
 SHELL                := /bin/bash -o nounset -o pipefail -o errexit
 WORKING_DIRECTORY    := $(shell pwd)
-DOCKER_ANTORA_IMAGE  := antora/antora:2.3.0
+DOCKER_ANTORA_IMAGE  := antora/antora:2.3.3
 SITE_FILE            := antora-playbook.yml
 
 help:
@@ -17,8 +17,8 @@ help:
 	@echo ""
 	@echo "Requirements to build the docs:"
 	@echo "  * Native: Antora installed globally with antora binary in the search path"
-	@echo "  * Lunr:   Possibility to build with Antora Lunr search engine, works just native and is optional
-	@echo "            Requires to have antora-lunr intalled, npm i -g antora-lunr
+	@echo "  * Lunr:   Possibility to build with Antora Lunr search engine, works just native and is optional"
+	@echo "            Requires to have antora-lunr intalled, npm i -g antora-lunr"
 	@echo "  * Docker: Docker installed with access to the official antora/antora image on DockerHub"
 	@echo ""
 	@echo "Targets:"
