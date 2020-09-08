@@ -34,6 +34,10 @@ ui:
 asciidoc:
   attributes:
     stem: latexmath
+    idprefix: ''
+    idseparator: '-'
+    page-pagination: ''
+    source-language: asciidoc@
 output:
   clean: true
   dir: ./public
