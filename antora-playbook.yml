@@ -26,6 +26,11 @@ content:
     branches: develop
     tags: v*
     start_path: docs
+  - url: https://github.com/OpenNMS/opennms-provisioning-integration-server.git
+    branches: master
+    start_path: docs
+    tags:
+      - '!1*'
 ui:
   bundle:
     url: https://github.com/opennms-forge/antora-ui-opennms/releases/download/v1.2.0/ui-bundle.zip
