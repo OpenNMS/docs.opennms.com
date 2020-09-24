@@ -5,8 +5,8 @@ It easily integrates with your core business applications and workflows to monit
 
 This documentation includes information on the following products:
 
-* {page-component-name}
-** Core (server that drives {page-component-name})
+* {page-component-title}
+** Core (server that drives {page-component-title})
 ** Minion (for application perspective monitoring)
 ** Sentinel (for scalability) 
 * Helm (for customized dashboards)
