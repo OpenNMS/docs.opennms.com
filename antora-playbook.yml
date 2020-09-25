@@ -10,6 +10,9 @@ site:
   robots: allow
 content:
   sources:
+  - url: https://github.com/OpenNMS/opennms.git
+    branches: jira/NMS-12497
+    start_path: docs
   # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
   - url: https://github.com/opennms/opennms-helm.git
     branches: develop
