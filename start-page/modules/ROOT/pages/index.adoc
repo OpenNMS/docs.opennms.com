@@ -1,7 +1,7 @@
 # Welcome to the OpenNMS Documentation
 
 IMPORTANT: We are migrating our docs to the https://antora.org[Antora framework].
-           This place here is work in progress and not complete.
+           This location is work in progress and not complete.
            If you want the official OpenNMS documentation, please go to https://docs.opennms.org.
            Feel free to get in contact with us in our https://chat.opennms.com/opennms/channels/wtd[Chat] if you have questions.
 
