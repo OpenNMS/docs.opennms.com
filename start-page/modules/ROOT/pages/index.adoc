@@ -1,5 +1,10 @@
 # Welcome to the OpenNMS Documentation
 
+IMPORTANT: We are migrating our docs to the https://antora.org[Antora framework].
+           This location is work in progress and not complete.
+           For the official OpenNMS documentation, please go to https://docs.opennms.org.
+           Feel free to contact us in our https://chat.opennms.com/opennms/channels/wtd[Chat] if you have questions.
+
 OpenNMS is a scalable and highly configurable network management platform with comprehensive fault, performance, and traffic monitoring. 
 It easily integrates with your core business applications and workflows to monitor and visualize everything in your network.
 
