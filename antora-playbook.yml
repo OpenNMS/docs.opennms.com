@@ -22,13 +22,13 @@ content:
     start_path: docs
     branches: develop
     tags:
-    - v*
-    - '!v5.0.1'
-    - '!v5.0.0'
-    - '!v4*'
-    - '!v3*'
-    - '!v2*'
-    - '!v1*'
+      - v*
+      - '!v5.0.1'
+      - '!v5.0.0'
+      - '!v4.*'
+      - '!v3.*'
+      - '!v2.*'
+      - '!v1.*'
   - url: https://github.com/OpenNMS/alec.git
     start_path: docs
     branches: develop
@@ -36,10 +36,13 @@ content:
   - url: https://github.com/OpenNMS/opennms-provisioning-integration-server.git
     start_path: docs
     branches:
-    - master
-    - release-*
-    - '!release-1.1*'
-    - '!release-1.0*'
+      - master
+      - release-*
+      - '!release-1.1*'
+      - '!release-1.0*'
+  - url: https://github.com/OpenNMS/opennms-js.git
+    start_path: docs-src
+    branches: ranger/docs
 ui:
   bundle:
     url: https://github.com/opennms-forge/antora-ui-opennms/releases/download/v1.3.0/ui-bundle.zip
