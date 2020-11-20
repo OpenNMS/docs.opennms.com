@@ -43,6 +43,13 @@ content:
   - url: https://github.com/OpenNMS/opennms-js.git
     start_path: docs-src
     branches: ranger/docs
+    tags:
+    - v*
+    - '!v0.*'
+    - '!v1.*'
+    - '!v2.0.0'
+    - '!v2.0.1'
+    - '!v2.0.2'
 ui:
   bundle:
     url: https://github.com/opennms-forge/antora-ui-opennms/releases/download/v1.3.0/ui-bundle.zip
