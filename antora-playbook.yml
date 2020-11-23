@@ -42,7 +42,7 @@ content:
       - '!release-1.0*'
   - url: https://github.com/OpenNMS/opennms-js.git
     start_path: docs-src
-    branches: develop
+    branches: ranger/docs
     tags:
     - v*
     - '!v0.*'
