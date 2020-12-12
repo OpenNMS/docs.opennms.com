@@ -7,7 +7,7 @@ executors:
       - image: antora/antora:2.3.4
   publish-executor:
     docker:
-      - image: circleci/buildpack-deps:eoan
+      - image: circleci/buildpack-deps:focal
 jobs:
   build-docs:
     executor: docs-executor
