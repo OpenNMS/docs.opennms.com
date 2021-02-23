@@ -42,3 +42,6 @@ This guide uses the following typographical conventions:
 * join the https://chat.opennms.com/opennms/channels/opennms-discussion[OpenNMS Discussion] chat
 * join our community on https://opennms.discourse.group/latest[Discourse]
 * contact sales@opennms.com to purchase https://www.opennms.com/support/[customer support]
+
+== Legal Notice
+include::legal-notice.adoc[]
