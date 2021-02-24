@@ -9,28 +9,25 @@ OpenNMS {page-component-title} is an open source solution that helps you visuali
 It offers comprehensive fault, performance, traffic monitoring, and alarm generation in one place. 
 Highly customizable and scalable, {page-component-title} easily integrates with your core business applications and workflows.
 
-Sample full stack OpenNMS implementation:
-
-
-== About this documentation
-
-This documentation includes information on the following:
+*Components*
 
 * OpenNMS {distribution}
 ** Core (server that drives {distribution})
-** Minion (for application perspective monitoring)
-** Sentinel (for scalability) 
-* Helm (for customized dashboards)
-* Architecture for Learning Enabled Correlation (ALEC) (for alarm triage)
-* Provisioning Integration Server (PRIS) (for integrating extracted data)
+** Minion (distritubed monitoring)
+** Sentinel (scalability) 
+* Helm (customized dashboards)
+* Architecture for Learning Enabled Correlation (ALEC) (alarm triage)
+* Provisioning Integration Server (PRIS) (extracted data integration)
+
+== About this documentation
+
+This documentation includes information on the OpenNMS components listed above, including deployment, configuration, use, and maintenance. 
 
 === Audience
-This guide is suitable for administrative users and those who will use {page-component-title} to monitor their network.    
+Suitable for administrative users and those who will use {page-component-title} to monitor their network.    
 
 [[conventions]]
 === Typographical Conventions
-
-This guide uses the following typographical conventions:
 
 [cols="25h,~"]
 |===
