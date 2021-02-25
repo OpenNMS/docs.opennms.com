@@ -5,26 +5,29 @@ IMPORTANT: We are migrating our docs to the https://antora.org[Antora framework]
            For the official OpenNMS documentation, please go to https://docs.opennms.org.
            Feel free to contact us in our https://chat.opennms.com/opennms/channels/wtd[Chat] if you have questions.
 
-OpenNMS is a scalable and highly configurable network management platform with comprehensive fault, performance, and traffic monitoring. 
-It easily integrates with your core business applications and workflows to monitor and visualize everything in your network.
+OpenNMS {page-component-title} is an open source solution that helps you visualize and monitor everything on your local and remote networks. 
+It offers comprehensive fault, performance, traffic monitoring, and alarm generation in one place. 
+Highly customizable and scalable, {page-component-title} easily integrates with your core business applications and workflows.
 
-This documentation includes information on the following products:
+*Components*
 
 * OpenNMS {distribution}
 ** Core (server that drives {distribution})
-** Minion (for application perspective monitoring)
-** Sentinel (for scalability) 
-* Helm (for customized dashboards)
-* Architecture for Learning Enabled Correlation (ALEC) (for alarm triage)
-* Provisioning Integration Server (PRIS) (for integrating extracted data)
+** Minion (distritubed monitoring)
+** Sentinel (scalability) 
+* Helm (customized dashboards)
+* Architecture for Learning Enabled Correlation (ALEC) (alarm triage)
+* Provisioning Integration Server (PRIS) (extracted data integration)
 
-== Audience
-This guide is suitable for administrative users and those who will use {page-component-title} to monitor their network.    
+== About this documentation
+
+This documentation includes information on the OpenNMS components listed above, including deployment, configuration, use, and maintenance. 
+
+=== Audience
+Suitable for administrative users and those who will use {page-component-title} to monitor their network.    
 
 [[conventions]]
-== Typographical Conventions
-
-This guide uses the following typographical conventions:
+=== Typographical Conventions
 
 [cols="25h,~"]
 |===
@@ -42,3 +45,6 @@ This guide uses the following typographical conventions:
 * join the https://chat.opennms.com/opennms/channels/opennms-discussion[OpenNMS Discussion] chat
 * join our community on https://opennms.discourse.group/latest[Discourse]
 * contact sales@opennms.com to purchase https://www.opennms.com/support/[customer support]
+
+== Legal Notice
+include::legal-notice.adoc[]
