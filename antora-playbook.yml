@@ -3,9 +3,9 @@ runtime:
   # Set a local antora cache dir for git repositories and UI components
   cache_dir: ./.cache/antora
 site:
-  title: OpenNMS // Docs
+  title: OpenNMS Documentation
   # the 404 page and sitemap files only get generated when the url property is set
-  url: https://docs.opennms.org
+  url: https://docs.opennms.com/
   start_page: start-page::index.adoc
   robots: allow
 content:
