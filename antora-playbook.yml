@@ -33,7 +33,9 @@ content:
   - url: https://github.com/OpenNMS/alec.git
     start_path: docs
     branches: []
-    tags: v*
+    tags:
+      - v*
+      - '!v1.1.1' # Tag v1.1.1 has version number 1.1.1-SNAPSHOT use v1.1.1-doc instead
   - url: https://github.com/OpenNMS/opennms-provisioning-integration-server.git
     start_path: docs
     branches:
