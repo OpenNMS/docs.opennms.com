@@ -21,7 +21,7 @@ content:
   # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
   - url: https://github.com/opennms/opennms-helm.git
     start_path: docs
-    branches: develop
+    branches: []
     tags:
       - v*
       - '!v5.0.1'
@@ -32,12 +32,11 @@ content:
       - '!v1.*'
   - url: https://github.com/OpenNMS/alec.git
     start_path: docs
-    branches: develop
+    branches: []
     tags: v*
   - url: https://github.com/OpenNMS/opennms-provisioning-integration-server.git
     start_path: docs
     branches:
-      - master
       - release-*
       - '!release-1.1*'
       - '!release-1.0*'
