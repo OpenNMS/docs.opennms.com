@@ -1,8 +1,8 @@
 # Welcome to the OpenNMS Documentation
 
-OpenNMS {page-component-title} is an open source solution that helps you visualize and monitor everything on your local and remote networks. 
+OpenNMS is an open source solution that helps you visualize and monitor everything on your local and remote networks. 
 It offers comprehensive fault, performance, traffic monitoring, and alarm generation in one place. 
-Highly customizable and scalable, {page-component-title} easily integrates with your core business applications and workflows.
+Highly customizable and scalable, OpenNMS easily integrates with your core business applications and workflows.
 
 *Components*
 
@@ -19,7 +19,7 @@ Highly customizable and scalable, {page-component-title} easily integrates with 
 This documentation includes information on the OpenNMS components listed above, including deployment, configuration, use, and maintenance. 
 
 === Audience
-Suitable for administrative users and those who will use {page-component-title} to monitor their network.    
+Suitable for administrative users and those who will use OpenNMS to monitor their network.    
 
 [[conventions]]
 === Typographical Conventions
