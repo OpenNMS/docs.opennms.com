@@ -4,7 +4,7 @@ runtime:
   cache_dir: ./.cache/antora
   fetch: true
 site:
-  title: OpenNMS Documentation
+  title: Documentation
   # the 404 page and sitemap files only get generated when the url property is set
   url: https://docs.opennms.com/
   start_page: start-page::index.adoc
