@@ -6,7 +6,7 @@ runtime:
 site:
   title: Documentation
   # the 404 page and sitemap files only get generated when the url property is set
-  url: https://docs.opennms.com/
+  url: https://www.opennms.com/
   start_page: start-page::index.adoc
   robots: allow
 content:
