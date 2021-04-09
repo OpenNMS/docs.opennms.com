@@ -2,12 +2,14 @@
   <nav class="navbar">
     <a href="{{{or site.url (or siteRootUrl siteRootPath)}}}"><img class="navbar-logo" src="{{{uiRootPath}}}/img/logotype.svg"/></a>
     <div class="navbar-brand">
-      <a class="navbar-item" href="https://docs.opennms.com">{{site.title}}</a>
+      <a class="navbar-site-title" href="https://docs.opennms.com">{{site.title}}</a>
+
       {{#if env.DOCSEARCH_ENABLED}}
-        <div class="navbar-item">
-          <input id="search-input" type="text" placeholder="Search docs">
-        </div>
+      <div class="navbar-item">
+        <input id="search-input" type="text" placeholder="Search docs">
+      </div>
       {{/if}}
+
       <button class="navbar-burger" data-target="topbar-nav">
         <span></span>
         <span></span>
