@@ -1,9 +1,9 @@
 ## 
 # Makefile to build the documentation with Antora
 ##
-.PHONY: help deps-native deps-with-docker native with-docker clean
+.PHONY: help deps-native deps-docker docs docs-lunr docs-docker clean clean-cache clean-all
 
-.DEFAULT_GOAL := native
+.DEFAULT_GOAL := docs
 
 SHELL                := /bin/bash -o nounset -o pipefail -o errexit
 WORKING_DIRECTORY    := $(shell pwd)
@@ -25,9 +25,9 @@ help:
 	@echo "  help:             Show this help"
 	@echo "  deps-native:      Test requirements to run Antora from the local system"
 	@echo "  deps-with-docker: Test requirements to run Antora with Docker"
-	@echo "  native:           Run Antora installed on the local system, default target"
-	@echo "  native-lunr:      RUn Antora build with Lunr site generator"
-	@echo "  with-docker:      Run Antora with Docker"
+	@echo "  docs:             Run Antora installed on the local system, default target"
+	@echo "  docs-lunr:        RUn Antora build with Lunr site generator"
+	@echo "  docs-docker:      Run Antora with Docker"
 	@echo "  clean:            Clean all build artifacts in build and public directory"
 	@echo "  clean-cache:      Clear git repository cache and UI components from .cache directory"
 	@echo "  clean-all:        Clean build artifacts and Antora cache"
@@ -43,19 +43,19 @@ help:
 deps-native:
 	@command -v antora
 
-deps-with-docker:
+deps-docker:
 	@command -v docker
 
 deps-native-lunr: deps-native
 	npm -g list antora-site-generator-lunr
 
-native: deps-native
+docs: deps-native
 	antora --stacktrace generate $(SITE_FILE)
 
-native-lunr: deps-native-lunr
+docs-lunr: deps-native-lunr
 	DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr antora --generator antora-site-generator-lunr --stacktrace generate $(SITE_FILE)
 
-with-docker: deps-with-docker
+docs-docker: deps-docker
 	@echo "Build Antora docs with docker ..."
 	docker run --rm -v $(WORKING_DIRECTORY):/antora $(DOCKER_ANTORA_IMAGE) --stacktrace generate $(SITE_FILE)
 
