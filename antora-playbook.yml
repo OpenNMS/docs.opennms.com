@@ -36,6 +36,7 @@ content:
     branches: []
     tags:
       - meridian-*
+      - '!meridian-foundation*'
       - '!meridian-2020.*'
       - '!meridian-201*'
   # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
