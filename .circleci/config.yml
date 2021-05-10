@@ -17,6 +17,7 @@ jobs:
           name: Generate HTML output for documentation
           command: |
             npm i -g antora-site-generator-lunr
+            sed -i -e "s,GITHUB_PRIME_TOKEN,${GITHUB_PRIME_TOKEN}," antora-playbook.yml
             DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr NODE_PATH="$(npm -g root)" antora --generator antora-site-generator-lunr --stacktrace generate antora-playbook.yml
       - store_artifacts:
           path: build/site.zip

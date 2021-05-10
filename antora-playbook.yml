@@ -31,7 +31,7 @@ content:
       - '!opennms-21.*'
       - '!opennms-20.*'
       - '!opennms-1*'
-  - url: git+ssh://git@github.com/OpenNMS/opennms-prime.git
+  - url: https://GITHUB_PRIME_TOKEN@github.com/OpenNMS/opennms-prime.git
     start_path: docs
     branches: []
     tags:
