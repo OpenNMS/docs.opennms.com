@@ -17,7 +17,26 @@ content:
     branches: HEAD
   - url: https://github.com/OpenNMS/opennms.git
     start_path: docs
-    branches: jira/NMS-12497
+    branches: []
+    tags:
+      - opennms-*
+      - '!opennms-27.*'
+      - '!opennms-26.*'
+      - '!opennms-25.*'
+      - '!opennms-24.*'
+      - '!opennms-23.*'
+      - '!opennms-22.*'
+      - '!opennms-21.*'
+      - '!opennms-20.*'
+      - '!opennms-1*'
+  - url: https://GITHUB_PRIME_TOKEN@github.com/OpenNMS/opennms-prime.git
+    start_path: docs
+    branches: []
+    tags:
+      - meridian-*
+      - '!meridian-foundation*'
+      - '!meridian-2020.*'
+      - '!meridian-201*'
   # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
   - url: https://github.com/opennms/opennms-helm.git
     start_path: docs
@@ -54,7 +73,7 @@ content:
     - '!v2.0.2'
 ui:
   bundle:
-    url: https://github.com/opennms-forge/antora-ui-opennms/releases/download/v1.3.1/ui-bundle.zip
+    url: https://github.com/opennms-forge/antora-ui-opennms/releases/download/v2.0.0/ui-bundle.zip
     snapshot: true
   supplemental_files: ./supplemental-ui
 asciidoc:
