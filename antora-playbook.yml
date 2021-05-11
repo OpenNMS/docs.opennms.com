@@ -20,9 +20,7 @@ content:
     branches: []
     tags:
       - opennms-*
-      - '!opennms-27.1.1*'
-      - '!opennms-27.1.0*'
-      - '!opennms-27.0.*'
+      - '!opennms-27.*'
       - '!opennms-26.*'
       - '!opennms-25.*'
       - '!opennms-24.*'
