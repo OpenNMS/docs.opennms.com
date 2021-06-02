@@ -20,6 +20,7 @@ content:
     branches: []
     tags:
       - opennms-*
+      - '!opennms-28.0.0-1' # Retagged to 28.0.0-2, version number incorrect
       - '!opennms-27.*'
       - '!opennms-26.*'
       - '!opennms-25.*'
