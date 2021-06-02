@@ -11,12 +11,16 @@ executors:
 jobs:
   build-docs:
     executor: docs-executor
+    resource_class: medium+
     steps:
       - checkout
       - run:
-          name: Generate HTML output for documentation
+          name: Install Antora LUNR site generator
           command: |
             npm i -g antora-site-generator-lunr
+      - run:
+          name: Generate HTML output for documentation
+          command: |
             sed -i -e "s,GITHUB_PRIME_TOKEN,${GITHUB_PRIME_TOKEN}," antora-playbook.yml
             DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr NODE_PATH="$(npm -g root)" node --max-old-space-size=4096 $(which antora) --generator antora-site-generator-lunr --stacktrace generate antora-playbook.yml
       - store_artifacts:
