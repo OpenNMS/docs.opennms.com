@@ -74,7 +74,7 @@ content:
     - '!v2.0.2'
 ui:
   bundle:
-    url: https://github.com/opennms-forge/antora-ui-opennms/releases/download/v2.0.1/ui-bundle.zip
+    url: https://github.com/opennms-forge/antora-ui-opennms/releases/download/v2.0.2/ui-bundle.zip
     snapshot: true
   supplemental_files: ./supplemental-ui
 asciidoc:
