@@ -90,7 +90,7 @@ window.antoraLunr = (function (lunr) {
     return hits
   }
 
-  function createSearchResult(result, store, searchResultDataset) {
+  function createSearchResult(result, store, searchResultDataset, query) {
     result.forEach(function (item) {
       var url = item.ref
       var hash
@@ -101,11 +101,11 @@ window.antoraLunr = (function (lunr) {
       var doc = store[url]
       var metadata = item.matchData.metadata
       var hits = highlightHit(metadata, hash, doc)
-      searchResultDataset.appendChild(createSearchResultItem(doc, item, hits))
+      searchResultDataset.appendChild(createSearchResultItem(doc, item, hits, query))
     })
   }
 
-  function createSearchResultItem (doc, item, hits) {
+  function createSearchResultItem (doc, item, hits, query) {
     var documentTitle = document.createElement('div')
     documentTitle.classList.add('search-result-document-title')
     documentTitle.innerText = doc.title
@@ -113,7 +113,11 @@ window.antoraLunr = (function (lunr) {
     documentHit.classList.add('search-result-document-hit')
     var documentHitLink = document.createElement('a')
     var rootPath = window.antora.basePath
-    documentHitLink.href = rootPath + item.ref
+
+    var url = new URL(rootPath + item.ref, window.location.href)
+    url.searchParams.set('q', query)
+
+    documentHitLink.href = url.href
     documentHit.appendChild(documentHitLink)
     hits.forEach(function (hit) {
       documentHitLink.appendChild(hit)
@@ -169,7 +173,7 @@ window.antoraLunr = (function (lunr) {
     searchResultDataset.classList.add('search-result-dataset')
     searchResult.appendChild(searchResultDataset)
     if (result.length > 0) {
-      createSearchResult(result, store, searchResultDataset)
+      createSearchResult(result, store, searchResultDataset, text)
     } else {
       searchResultDataset.appendChild(createNoResult(text))
     }
@@ -193,10 +197,10 @@ window.antoraLunr = (function (lunr) {
 
   function init (data) {
     var index = Object.assign({index: lunr.Index.load(data.index), store: data.store})
-    var search = debounce(function () {
+    var searchFn = debounce(function () {
       searchIndex(index.index, index.store, searchInput.value)
     }, 100)
-    searchInput.addEventListener('keydown', search)
+    searchInput.addEventListener('keydown', searchFn)
 
     // this is prevented in case of mousedown attached to SearchResultItem
     searchInput.addEventListener('blur', function (e) {
@@ -204,6 +208,142 @@ window.antoraLunr = (function (lunr) {
         searchResult.removeChild(searchResult.firstChild)
       }
     })
+
+    // Extract query from URL and highlite matches
+    let params = new URLSearchParams(window.location.search.slice(1))
+    let query = params.get('q')
+    if (query !== null) {
+      search(index.index, query)
+        .filter(entry => entry.ref.split('#')[0] == window.location.pathname)
+        .forEach(entry => {
+
+          Object.keys(entry.matchData.metadata).forEach(function (term) {
+            Object.keys(entry.matchData.metadata[term]).forEach(function (field) {
+              let positions = entry.matchData.metadata[term][field].position
+                .sort((a, b) => a[0] - b[0])
+                .slice()
+                
+              let element = document.querySelector('article.doc')
+
+              if (field == 'title') {
+                let ref = entry.ref.split('#')
+                
+                let node = (ref[1] === undefined)
+                  ? element.querySelector('h1') // Find the main title
+                  : document.getElementById(ref[1]) // Find the sub-title
+
+                if (node !== undefined) {
+                  positions.forEach(match => {
+                    // Define range of match in relation to current node
+                    let range = document.createRange()
+                    range.setStart(node.lastChild, match[0])
+                    range.setEnd(node.lastChild, match[0] + match[1])
+
+                    // Create marking element
+                    let tag = document.createElement('mark')
+                    tag.dataset.matchStart = match[0]
+                    tag.dataset.matchLen = match[1]
+
+                    // Insert marking element
+                    range.surroundContents(tag)
+                  })
+                }
+
+	            } else if (field == 'text') {
+                // Walk the article but remove titles, navigation and toc
+                walker = document.createTreeWalker(
+                  element,
+                  NodeFilter.SHOW_TEXT,
+                  node => {
+                    if (node.parentElement.matches('article.doc aside.toc')) return NodeFilter.FILTER_SKIP
+                    if (node.parentElement.matches('article.doc aside.toc *')) return NodeFilter.FILTER_SKIP
+                    if (node.parentElement.matches('article.doc nav.pagination')) return NodeFilter.FILTER_SKIP
+                    if (node.parentElement.matches('article.doc nav.pagination *')) return NodeFilter.FILTER_SKIP
+                    if (node.parentElement.matches('article.doc h1')) return NodeFilter.FILTER_SKIP
+                    if (node.parentElement.matches('article.doc h1 *')) return NodeFilter.FILTER_SKIP
+                    if (node.parentElement.matches('article.doc h2')) return NodeFilter.FILTER_SKIP
+                    if (node.parentElement.matches('article.doc h2 *')) return NodeFilter.FILTER_SKIP
+                    if (node.parentElement.matches('article.doc h3')) return NodeFilter.FILTER_SKIP
+                    if (node.parentElement.matches('article.doc h3 *')) return NodeFilter.FILTER_SKIP
+                    if (node.parentElement.matches('article.doc h4')) return NodeFilter.FILTER_SKIP
+                    if (node.parentElement.matches('article.doc h4 *')) return NodeFilter.FILTER_SKIP
+                    if (node.parentElement.matches('article.doc h5')) return NodeFilter.FILTER_SKIP
+                    if (node.parentElement.matches('article.doc h5 *')) return NodeFilter.FILTER_SKIP
+                    if (node.parentElement.matches('article.doc h6')) return NodeFilter.FILTER_SKIP
+                    if (node.parentElement.matches('article.doc h6 *')) return NodeFilter.FILTER_SKIP
+                    return NodeFilter.FILTER_ACCEPT
+                  },
+                )
+                
+                var index = -1 // Ignore first encountered blank
+                var blank = true // Start in blank mode to trim of leading blank
+                  
+                var match = positions.shift()
+
+                while (node = walker.nextNode()) {
+                  if (match === undefined) break
+
+                  var text = node.textContent
+
+                  if (text == '') {
+                    continue
+                  }
+
+                  // If node is blank, remeber and skip
+                  if (/^[\t\n\r ]$/.test(text)) {
+                    blank = true
+                    continue
+                  }
+
+                  // If node does not starts with blank but a blank has been encountered before, insert it
+                  if (blank && !/^[\t\n\r ]/.test(text)) {
+                    index += 1
+                  }
+
+                  // Reset blank status
+                  blank = false
+
+                  // Check if match is part of this node
+                  if (match[0] < index + text.length) {
+
+                    // Define range of match in relation to current node
+                    let range = document.createRange()
+                    range.setStart(node, match[0] - index)
+                    range.setEnd(node, match[0] + match[1] - index)
+  
+                    // Create marking element
+                    let tag = document.createElement('mark')
+                    tag.dataset.matchStart = match[0]
+                    tag.dataset.matchLen = match[1]
+  
+                    // Insert marking element
+                    range.surroundContents(tag)
+
+                    // Move index to end of match, which is the same as the end of the marking element
+                    index = match[0] + match[1] 
+                    
+                    // Pop next node from walker - which is the element we've just added
+                    walker.nextNode()
+
+                    // Move to next match
+                    match = positions.shift()
+
+                    continue
+                  }
+
+                  // Remember if node ends with blank
+                  if (/[\t\n\r ]$/.test(text)) {
+                    blank = true
+                    text = text.trimEnd()
+                  }
+
+                  index += text.length
+                }
+	            }
+            })
+          })
+        })
+    }
   }
 
   return {
