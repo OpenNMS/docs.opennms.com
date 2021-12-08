@@ -20,6 +20,7 @@ jobs:
             npm i -g antora-site-generator-lunr
       - run:
           name: Generate HTML output for documentation
+          no_output_timeout: 20m
           command: |
             sed -i -e "s,GITHUB_PRIME_TOKEN,${GITHUB_PRIME_TOKEN}," antora-playbook.yml
             DOCSEARCH_INDEX_VERSION=latest DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr NODE_PATH="$(npm -g root)" node --single-threaded --single-threaded-gc --optimize-for-size --max-old-space-size=12288 $(which antora) --generator antora-site-generator-lunr --stacktrace generate antora-playbook.yml
