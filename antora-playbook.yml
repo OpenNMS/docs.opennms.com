@@ -17,28 +17,12 @@ content:
     branches: HEAD
   - url: https://github.com/OpenNMS/opennms.git
     start_path: docs
-    branches: []
-    tags:
-      - opennms-*
-      - '!opennms-28.0.2-1' # Retagged to 28.0.2-2, small doc fix
-      - '!opennms-28.0.0-1' # Retagged to 28.0.0-2, version number incorrect
-      - '!opennms-27.*'
-      - '!opennms-26.*'
-      - '!opennms-25.*'
-      - '!opennms-24.*'
-      - '!opennms-23.*'
-      - '!opennms-22.*'
-      - '!opennms-21.*'
-      - '!opennms-20.*'
-      - '!opennms-1*'
+    branches:
+      - master
   - url: https://GITHUB_PRIME_TOKEN@github.com/OpenNMS/opennms-prime.git
     start_path: docs
-    branches: []
-    tags:
-      - meridian-*
-      - '!meridian-foundation*'
-      - '!meridian-2020.*'
-      - '!meridian-201*'
+    branches:
+      - master-2021
   # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
   - url: https://github.com/opennms/opennms-helm.git
     start_path: docs
