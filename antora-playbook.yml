@@ -22,7 +22,13 @@ content:
   - url: https://GITHUB_PRIME_TOKEN@github.com/OpenNMS/opennms-prime.git
     start_path: docs
     branches:
-      - master-2021
+      - 'master-*'
+      - '!master-2020'
+      - '!master-2019'
+      - '!master-2018'
+      - '!master-2017'
+      - '!master-2016'
+      - '!master-2015'
   # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
   - url: https://github.com/opennms/opennms-helm.git
     start_path: docs
