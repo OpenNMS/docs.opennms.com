@@ -15,10 +15,18 @@ content:
   - url: .
     start_path: start-page
     branches: HEAD
+
+####
+# Horizon
+###
   - url: https://github.com/OpenNMS/opennms.git
     start_path: docs
     branches:
       - master
+
+####
+# Meridian
+###
   - url: https://GITHUB_PRIME_TOKEN@github.com/OpenNMS/opennms-prime.git
     start_path: docs
     branches:
@@ -30,6 +38,10 @@ content:
       - '!master-2016'
       - '!master-2015'
   # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
+
+####
+# Helm Grafana Plugin
+###
   - url: https://github.com/opennms/opennms-helm.git
     start_path: docs
     branches: []
@@ -41,12 +53,20 @@ content:
       - '!v3.*'
       - '!v2.*'
       - '!v1.*'
+
+####
+# ALEC
+###
   - url: https://github.com/OpenNMS/alec.git
     start_path: docs
     branches: []
     tags:
       - v*
       - '!v1.1.1' # Tag v1.1.1 has version number 1.1.1-SNAPSHOT use v1.1.1-doc instead
+
+####
+# Provisioning Integration Server
+###
   - url: https://github.com/OpenNMS/opennms-provisioning-integration-server.git
     start_path: docs
     branches:
@@ -63,6 +83,20 @@ content:
     - '!v2.0.0'
     - '!v2.0.1'
     - '!v2.0.2'
+
+####
+# Nephron
+###
+  - url: https://github.com/OpenNMS/nephron.git
+    start_path: docs
+    branches: []
+    tags:
+      - v*
+      - '!v0.3.1'
+      - '!v0.3.0'
+      - '!v0.1.*'
+      - '!v0.2.*'
+
 ui:
   bundle:
     url: https://github.com/opennms-forge/antora-ui-opennms/releases/download/v2.0.6/ui-bundle.zip
