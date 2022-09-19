@@ -36,14 +36,7 @@ content:
     branches:
       - develop
       - /^release-.*/
-    tags:
-      - v*
-      - '!v5.0.1'
-      - '!v5.0.0'
-      - '!v4.*'
-      - '!v3.*'
-      - '!v2.*'
-      - '!v1.*'
+      - /^main-.*/
   - url: https://github.com/OpenNMS/alec.git
     start_path: docs
     branches:
