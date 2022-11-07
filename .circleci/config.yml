@@ -4,7 +4,7 @@ version: 2.1
 executors:
   docs-executor:
     docker:
-      - image: antora/antora:2.3.4
+      - image: opennms/antora:3.1.1-b8850
   publish-executor:
     docker:
       - image: circleci/buildpack-deps:focal
@@ -15,15 +15,15 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install Antora LUNR site generator
+          name: Prepare Node environment
           command: |
-            npm i -g antora-site-generator-lunr
+            npm install
       - run:
           name: Generate HTML output for documentation
           no_output_timeout: 30m
           command: |
             sed -i -e "s,GITHUB_PRIME_TOKEN,${GITHUB_PRIME_TOKEN}," antora-playbook.yml
-            DOCSEARCH_INDEX_VERSION=latest DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr NODE_PATH="$(npm -g root)" node --optimize-for-size --max-old-space-size=12288 $(which antora) --generator antora-site-generator-lunr --stacktrace generate antora-playbook.yml
+            DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr npx antora --stacktrace generate antora-playbook.yml
             ./link-latest.sh
             find public ! -type d -ls | awk '{ print $NF, $0 }' | sort | cut -d' ' -f 2- > build/public-filelist.txt
       - store_artifacts:

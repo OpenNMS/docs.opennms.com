@@ -1,4 +1,10 @@
 ---
+antora:
+  extensions:
+    - require: '@antora/lunr-extension'
+      index_latest_only: true
+git:
+  fetch_concurrency: 1
 runtime:
   # Set a local antora cache dir for git repositories and UI components
   cache_dir: ./.cache/antora
@@ -80,9 +86,9 @@ content:
     - '!v2.5.0'
 ui:
   bundle:
-    url: https://github.com/opennms-forge/antora-ui-opennms/releases/download/v3.0.1/ui-bundle.zip
+    url: https://github.com/opennms-forge/antora-ui-opennms/releases/download/v3.1.0/ui-bundle.zip
     snapshot: true
-  supplemental_files: ./supplemental-ui
+  supplemental_files: ./supplemental_ui
 asciidoc:
   attributes:
     experimental: true
