@@ -25,6 +25,7 @@ content:
     start_path: docs
     branches:
       - master
+      - master-30
       - master-29
   - url: https://GITHUB_PRIME_TOKEN@github.com/OpenNMS/opennms-prime.git
     start_path: docs
@@ -45,7 +46,8 @@ content:
       - /^main-.*/
     tags:
       - v*
-      - '!v8.0.*'
+      - '!v8.0.1'
+      - '!v8.0.0'
       - '!v7.2.*'
       - '!v7.1.*'
       - '!v7.0.*'
