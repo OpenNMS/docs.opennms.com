@@ -25,6 +25,7 @@ content:
     start_path: docs
     branches:
       - 'master-*'
+      - '!master-29'
       - '!master-28'
       - '!master-27'
       - '!master-26'
