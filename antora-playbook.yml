@@ -79,10 +79,9 @@ content:
       - '!v2.0.0.alpha0' # same SNAPSHOT version as another branch
       - '!v1.1.1' # Tag v1.1.1 has version number 1.1.1-SNAPSHOT use v1.1.1-doc instead
       - '!v1.1.1-rebuild' # I thought I needed to remake the debs, but I did not
-    - url: https://github.com/OpenNMS/opennms-velocloud-plugin
+  - url: https://github.com/OpenNMS/opennms-velocloud-plugin
     start_path: docs
-    branches:
-      - main
+    branches: main
     - url: https://github.com/OpenNMS/opennms-provisioning-integration-server.git
     start_path: docs
     branches:
