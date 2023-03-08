@@ -81,7 +81,8 @@ content:
       - '!v1.1.1-rebuild' # I thought I needed to remake the debs, but I did not
     - url: https://github.com/OpenNMS/opennms-velocloud-plugin
     start_path: docs
-    branches: main
+    branches:
+      - main
     - url: https://github.com/OpenNMS/opennms-provisioning-integration-server.git
     start_path: docs
     branches:
