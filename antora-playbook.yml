@@ -82,8 +82,6 @@ content:
     - url: https://github.com/OpenNMS/opennms-velocloud-plugin
     start_path: docs
     branches: main
-    tags:
-     - v*
     - url: https://github.com/OpenNMS/opennms-provisioning-integration-server.git
     start_path: docs
     branches:
