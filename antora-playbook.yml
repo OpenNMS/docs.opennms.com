@@ -58,10 +58,13 @@ content:
       - '!v8.0.2'
       - '!v8.0.1'
       - '!v8.0.0'
+      - '!v7.3.0'
       - '!v7.2.*'
       - '!v7.1.*'
       - '!v7.0.*'
+      - '!v6.0.1'
       - '!v6.0.0'
+      - '!v5.0.3'
       - '!v5.0.2'
       - '!v5.0.1'
       - '!v5.0.0'
@@ -76,12 +79,18 @@ content:
       - /^release-.*/
     tags:
       - v*
+      - '!v2.*.*'
+      - '!v2.*.*-ALPHA'
+      - '!v1.*.*'
+      - '!v1.1.1-doc'
       - '!v2.0.0.alpha0' # same SNAPSHOT version as another branch
       - '!v1.1.1' # Tag v1.1.1 has version number 1.1.1-SNAPSHOT use v1.1.1-doc instead
       - '!v1.1.1-rebuild' # I thought I needed to remake the debs, but I did not
   - url: https://github.com/OpenNMS/opennms-velocloud-plugin
     start_path: docs
     branches: main
+    tags:
+    - v*
   - url: https://github.com/OpenNMS/opennms-provisioning-integration-server.git
     start_path: docs
     branches:
@@ -99,6 +108,10 @@ content:
     - '!v2.0.1'
     - '!v2.0.2'
     - '!v2.5.0'
+    - '!v2.5.1'
+    - '!v2.5.2'
+    - '!v2.5.3'
+    - '!v2.5.4'
 ui:
   bundle:
     url: https://github.com/opennms-forge/antora-ui-opennms/releases/download/v3.1.0/ui-bundle.zip
