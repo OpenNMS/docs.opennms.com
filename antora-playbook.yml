@@ -79,7 +79,6 @@ content:
       - /^release-.*/
     tags:
       - v*
-      - '!v3.*.*'
       - '!v2.*.*'
       - '!v2.*.*-ALPHA'
       - '!v1.*.*'
