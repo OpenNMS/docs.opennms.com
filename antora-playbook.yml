@@ -46,7 +46,7 @@ content:
       - '!master-2016'
       - '!master-2015'
   # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
-  - url: https://github.com/opennms/opennms-helm.git
+  - url: https://github.com/opennms/grafana-plugin.git
     start_path: docs
     branches:
       - develop
