@@ -71,10 +71,6 @@ content:
     start_path: docs
     branches:
       - main
-      - /^release-.*/
-    tags:
-      - v*
-      - '!v1.0.0'
   - url: https://github.com/OpenNMS/opennms-velocloud-plugin.git
     start_path: docs
     branches:
