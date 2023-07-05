@@ -18,7 +18,7 @@ site:
   start_page: start-page::index.adoc
   robots: |
     User-agent: *
-    Disallow: /deployment/core/centos-rhel/
+    Disallow: */*/deployment/core/centos-rhel/
     Disallow: /deployment/core/centos-rhel7/
     Disallow: /deployment/core/centos-rhel8/
     Disallow: /deployment/core/centos-rhel9/
