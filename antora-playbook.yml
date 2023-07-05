@@ -16,7 +16,42 @@ site:
   keys:
     google_analytics: 'G-WR2RML9P8J'
   start_page: start-page::index.adoc
-  robots: allow
+  robots: |
+    User-agent: *
+    Disallow: /deployment/core/centos-rhel/
+    Disallow: /deployment/core/centos-rhel7/
+    Disallow: /deployment/core/centos-rhel8/
+    Disallow: /deployment/core/centos-rhel9/
+    Disallow: /deployment/core/debian-ubuntu/
+    Disallow: /deployment/core/debian/
+    Disallow: /deployment/core/docker/
+    Disallow: /deployment/core/message-broker/
+    Disallow: /deployment/core/ubuntu/
+    Disallow: /deployment/minion/centos-rhel7/
+    Disallow: /deployment/minion/centos-rhel8/
+    Disallow: /deployment/minion/centos-rhel9/
+    Disallow: /deployment/minion/debian/
+    Disallow: /deployment/minion/docker/
+    Disallow: /deployment/minion/message-broker/
+    Disallow: /deployment/minion/ubuntu/
+    Disallow: /deployment/opentracing/core.adoc
+    Disallow: /deployment/opentracing/minion.adoc
+    Disallow: /deployment/opentracing/sentinel.adoc
+    Disallow: /deployment/repos/rhel-centos/
+    Disallow: /deployment/sentinel/runtime/centos-rhel/
+    Disallow: /deployment/sentinel/runtime/centos-rhel7/
+    Disallow: /deployment/sentinel/runtime/centos-rhel8/
+    Disallow: /deployment/sentinel/runtime/centos-rhel9/
+    Disallow: /deployment/sentinel/runtime/debian-ubuntu/
+    Disallow: /deployment/sentinel/runtime/debian/
+    Disallow: /deployment/sentinel/runtime/ubuntu/
+    Disallow: /deployment/upgrade/backup/centos-rhel8/
+    Disallow: /deployment/upgrade/backup/debian-ubuntu/
+    Disallow: /deployment/upgrade/debian/
+    Disallow: /deployment/upgrade/restore/centos-rhel8/
+    Disallow: /deployment/upgrade/restore/debian-ubuntu/
+    Disallow: /deployment/upgrade/rhel/
+    Disallow: /deployment/deployment/time-sync.adoc
 content:
   sources:
   # Generic start page
