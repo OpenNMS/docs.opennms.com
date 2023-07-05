@@ -52,6 +52,15 @@ site:
     Disallow: /deployment/upgrade/restore/debian-ubuntu/
     Disallow: /deployment/upgrade/rhel/
     Disallow: /deployment/deployment/time-sync.adoc
+    Disallow: /operation/deep-dive/device-config-backup/centos-rhel/
+    Disallow: /operation/deep-dive/device-config-backup/debian-ubuntu/
+    Disallow: /operation/deep-dive/sentinel/message-broker/
+    Disallow: /operation/deep-dive/sentinel/ipfix.adoc
+    Disallow: /operation/deep-dive/sentinel/netflow5.adoc
+    Disallow: /operation/deep-dive/sentinel/netflow9.adoc
+    Disallow: /operation/deep-dive/sentinel/sflow.adoc
+    Disallow: /reference/configuration/firewall/centos-rhel/
+    Disallow: /reference/configuration/firewall/debian-ubuntu/
 content:
   sources:
   # Generic start page
