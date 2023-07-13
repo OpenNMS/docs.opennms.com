@@ -117,6 +117,11 @@ content:
     start_path: docs
     branches:
       - main
+  - url: https://github.com/OpenNMS-Cloud/lokahi.git
+    start_path: docs
+    branches:
+      - develop
+      - /^release-.*/
   - url: https://github.com/OpenNMS/opennms-velocloud-plugin.git
     start_path: docs
     branches:
