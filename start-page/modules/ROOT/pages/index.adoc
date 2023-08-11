@@ -4,15 +4,18 @@ OpenNMS is an open source solution that helps you visualize and monitor everythi
 It offers comprehensive fault, performance, traffic monitoring, and alarm generation in one place.
 Highly customizable and scalable, OpenNMS easily integrates with your core business applications and workflows.
 
-*Components*
+== Components
 
 * OpenNMS {distribution}
 ** Core (server that drives {distribution})
 ** Minion (distritubed monitoring)
-** Sentinel (scalability)
-* Helm (customized dashboards)
-* Architecture for Learning Enabled Correlation (ALEC) (alarm triage)
-* Provisioning Integration Server (PRIS) (extracted data integration)
+** Sentinel (scale flow processing)
+* Plugin for Grafana, formerly HELM (customized dashboards)
+* Architecture for Learning Enabled Correlation (ALEC) (alarm correlation)
+* Provisioning Integration Server (PRIS) (advanced node provisioning)
+* OpenNMS.js (JavaScript library for interacting over REST)
+* Helm Charts (deploy on Kubernetes)
+* Velocloud Plugin (plugin to provision nodes from a Velocloud Orchestrator)
 
 == About this documentation
 
@@ -22,24 +25,28 @@ This documentation includes information on the OpenNMS components listed above, 
 Suitable for administrative users and those who will use OpenNMS to monitor their network.    
 
 [[conventions]]
-=== Typographical Conventions
+=== Typographical conventions
 
-[cols="25h,~"]
+[options="autowidth"]
 |===
+| Convention | Meaning
 
-|*Convention* |*Meaning*
-|*bold* | Indicates UI elements to click or select in a procedure, and the names of UI elements like dialogs or icons. 
-|_italics_| Introduces a defined or special word. Also used for the titles of publications.
-|`code` | Anything you must type or enter, and the names for code-related elements (classes, methods, commands). 
+| *bold*
+| Indicates UI elements to click or select in a procedure, and the names of UI elements like dialogs or icons. 
 
+| _italics_
+| Introduces a defined or special word. Also used for the titles of publications.
+
+| `code`
+| Anything you must type or enter, and the names for code- or config-related elements (classes, methods, commands). 
 |===
 
 [[ga-admin-help]]
-== Need Help?
+== Need help?
 
-* join the https://chat.opennms.com/opennms/channels/opennms-discussion[OpenNMS Discussion] chat
-* join our community on https://opennms.discourse.group/latest[Discourse]
-* contact sales@opennms.com to purchase https://www.opennms.com/support/[customer support]
+* Join the https://chat.opennms.com/opennms/channels/opennms-discussion[OpenNMS Discussion] chat on Mattermost
+* Join our community forums at https://opennms.discourse.group/latest[Discourse]
+* Contact sales@opennms.com to purchase https://www.opennms.com/support/[customer support]
 
-== Legal Notice
+== Legal notice
 include::legal-notice.adoc[]
