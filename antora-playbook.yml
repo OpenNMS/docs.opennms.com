@@ -60,6 +60,10 @@ site:
     Disallow: /*/*/operation/deep-dive/sentinel/netflow5.adoc
     Disallow: /*/*/operation/deep-dive/sentinel/netflow9.adoc
     Disallow: /*/*/operation/deep-dive/sentinel/sflow.adoc
+    Disallow: /*/*/operation/deep-dive/device-config-backup/dcb-accounts/aruba-os.adoc
+    Disallow: /*/*/operation/deep-dive/device-config-backup/dcb-accounts/aruba-oscx.adoc
+    Disallow: /*/*/operation/deep-dive/device-config-backup/dcb-accounts/cisco-ios.adoc
+    Disallow: /*/*/operation/deep-dive/device-config-backup/dcb-accounts/juniper.adoc
     Disallow: /*/*/reference/configuration/firewall/centos-rhel/
     Disallow: /*/*/reference/configuration/firewall/debian-ubuntu/
     Disallow: /opennmshelmcharts/*/installation/os/
