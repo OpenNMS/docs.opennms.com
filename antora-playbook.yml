@@ -66,6 +66,7 @@ site:
     Disallow: /*/*/operation/deep-dive/device-config-backup/dcb-accounts/juniper.adoc
     Disallow: /*/*/reference/configuration/firewall/centos-rhel/
     Disallow: /*/*/reference/configuration/firewall/debian-ubuntu/
+    Disallow: /opennmshelmcharts/*/installation/os/
 content:
   sources:
   # Generic start page
@@ -116,7 +117,11 @@ content:
       - '!v2.0.0.alpha0' # same SNAPSHOT version as another branch
       - '!v1.1.1' # Tag v1.1.1 has version number 1.1.1-SNAPSHOT use v1.1.1-doc instead
       - '!v1.1.1-rebuild' # I thought I needed to remake the debs, but I did not
-   - url: https://github.com/OpenNMS-Cloud/lokahi.git
+  - url: https://github.com/OpenNMS/helm-charts.git
+    start_path: docs
+    branches:
+      - main
+  - url: https://github.com/OpenNMS-Cloud/lokahi.git
     start_path: docs
     branches:
       - develop
