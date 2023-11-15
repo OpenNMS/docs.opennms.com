@@ -4,7 +4,7 @@ version: 2.1
 executors:
   docs-executor:
     docker:
-      - image: opennms/antora:3.1.1-b8850
+      - image: opennms/antora:3.1.1-b9148
   publish-executor:
     docker:
       - image: circleci/buildpack-deps:focal
