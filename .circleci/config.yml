@@ -54,12 +54,10 @@ jobs:
       - run:
           name: Add SSH server fingerprint
           command: |
-            echo 'docs.opennms.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBMsc8yB7l3htLVhh7LEOcbxV1lus/bO5cc9BOX+2EEBtsbsPMSZVELTN1R1wFS/6watgPDwFcswfD3lUe8ymxZo=' >> ~/.ssh/known_hosts
             echo 'web03.opennms.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBPjI6KGxejlMooBADWlnhAq0HhcvSQDcJMfSgF3eRrDc29gWyzl8ET6WGPDpaw8XTnUNuVQmXW8G14Zs25CbDEE=' >> ~/.ssh/known_hosts
       - run:
           name: Push content to the web server
           command: |
-            rsync -a --delete -e ssh public/ circleci@docs.opennms.com:/var/www/docs.opennms.com/htdocs
             rsync -a --delete -e ssh public/ circleci@web03.opennms.com:/var/www/docs.opennms.com/htdocs
 
 workflows:
