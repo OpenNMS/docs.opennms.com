@@ -23,7 +23,6 @@ jobs:
           no_output_timeout: 30m
           command: |
             sed -i -e "s,GITHUB_PRIME_TOKEN,${GITHUB_PRIME_TOKEN}," antora-playbook.yml
-            sed -i -e "s,GITHUB_CLOUD_TOKEN,${GITHUB_CLOUD_TOKEN}," antora-playbook.yml
             DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr npx antora --stacktrace generate antora-playbook.yml
             ./link-latest.sh
             find public ! -type d -ls | awk '{ print $NF, $0 }' | sort | cut -d' ' -f 2- > build/public-filelist.txt
