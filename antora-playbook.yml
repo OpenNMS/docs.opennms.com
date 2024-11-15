@@ -129,6 +129,13 @@ content:
     tags:
       - v*
       - '!v1.0.0'
+  - url: https://GITHUB_PRIME_TOKEN@github.com/OpenNMS/opennms-servicenow-plugin.git
+    start_path: docs
+    branches:
+      - main
+      - /^release-.*/
+    tags:
+      - v*
   - url: https://github.com/OpenNMS/opennms-provisioning-integration-server.git
     start_path: docs
     branches:
