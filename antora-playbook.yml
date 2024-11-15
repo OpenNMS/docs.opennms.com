@@ -137,6 +137,7 @@ content:
     tags:
       - v*
       - '!v1.0.0'
+      - '!v1.0.0a'
   - url: https://github.com/OpenNMS/opennms-provisioning-integration-server.git
     start_path: docs
     branches:
