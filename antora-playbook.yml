@@ -87,6 +87,7 @@ content:
     start_path: docs
     branches:
       - 'main-*'
+      - '!main-8'
       - '!main-7'
   - url: https://github.com/OpenNMS/alec.git
     start_path: docs
