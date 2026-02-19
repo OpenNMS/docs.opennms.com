@@ -89,6 +89,7 @@ content:
     tags:
       - 'v12*'
       - 'v9*'
+      - '!v9.0.0'
   - url: https://github.com/OpenNMS/alec.git
     start_path: docs
     branches:
