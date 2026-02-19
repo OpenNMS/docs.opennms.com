@@ -75,37 +75,23 @@ content:
   - url: https://github.com/OpenNMS/opennms.git
     start_path: docs
     branches:
-      - 'master-*'
-      - '!master-29'
-      - '!master-28'
-      - '!master-27'
-      - '!master-26'
-      - '!master-25'
-      - '!master-24'
-      - '!master-23'
-      - '!master-22'
-      - '!master-21'
-      - '!master-20'
+      - 'master-35'
   - url: https://GITHUB_PRIME_TOKEN@github.com/OpenNMS/opennms-prime.git
     start_path: docs
     branches:
-      - 'master-*'
-      - '!master-2020'
-      - '!master-2019'
-      - '!master-2018'
-      - '!master-2017'
-      - '!master-2016'
-      - '!master-2015'
+      - 'master-2025'
+      - 'master-2024'
+      - 'master-2023'
   # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
   - url: https://github.com/opennms/grafana-plugin.git
     start_path: docs
-    branches:
-      - 'main-*'
-      - '!main-7'
+    branches: ~
+    tags:
+      - 'v12*'
+      - 'v9*'
   - url: https://github.com/OpenNMS/alec.git
     start_path: docs
     branches:
-      - develop
       - /^release-.*/
     tags:
       - v*
@@ -116,19 +102,9 @@ content:
       - '!v2.0.0.alpha0' # same SNAPSHOT version as another branch
       - '!v1.1.1' # Tag v1.1.1 has version number 1.1.1-SNAPSHOT use v1.1.1-doc instead
       - '!v1.1.1-rebuild' # I thought I needed to remake the debs, but I did not
-  - url: https://github.com/OpenNMS/opennms-velocloud-plugin.git
-    start_path: docs
-    branches:
-      - main
-      - /^release-.*/
-    tags:
-      - v*
-      - '!v1.0.0'
   - url: https://GITHUB_PRIME_TOKEN@github.com/OpenNMS/opennms-servicenow-plugin.git
     start_path: docs
-    branches:
-      - main
-      - /^release-.*/
+    branches: ~
     tags:
       - v*
       - '!v1.0.0'
@@ -141,7 +117,7 @@ content:
       - '!release-1.0*'
   - url: https://github.com/OpenNMS/opennms-js.git
     start_path: docs-src
-    branches: develop
+    branches: ~
     tags:
     - v*
     - '!v0.*'
