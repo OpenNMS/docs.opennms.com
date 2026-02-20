@@ -76,20 +76,17 @@ content:
     start_path: docs
     branches:
       - 'master-35'
-  - url: https://GITHUB_PRIME_TOKEN@github.com/OpenNMS/opennms-prime.git
-    start_path: docs
-    branches:
-      - 'master-2025'
-      - 'master-2024'
-      - 'master-2023'
+#  - url: https://GITHUB_PRIME_TOKEN@github.com/OpenNMS/opennms-prime.git
+#    start_path: docs
+#    branches:
+#      - 'master-2025'
+#      - 'master-2024'
+#      - 'master-2023'
   # embedding empty credentials in the URL disables the Edit this Page link for any page created from this repository
   - url: https://github.com/opennms/grafana-plugin.git
     start_path: docs
-    branches: ~
-    tags:
-      - 'v12*'
-      - 'v9*'
-      - '!v9.0.0'
+    branches: 
+      - 'main-9'
   - url: https://github.com/OpenNMS/alec.git
     start_path: docs
     branches:
@@ -103,13 +100,13 @@ content:
       - '!v2.0.0.alpha0' # same SNAPSHOT version as another branch
       - '!v1.1.1' # Tag v1.1.1 has version number 1.1.1-SNAPSHOT use v1.1.1-doc instead
       - '!v1.1.1-rebuild' # I thought I needed to remake the debs, but I did not
-  - url: https://GITHUB_PRIME_TOKEN@github.com/OpenNMS/opennms-servicenow-plugin.git
-    start_path: docs
-    branches: ~
-    tags:
-      - v*
-      - '!v1.0.0'
-      - '!v1.0.0a'
+#  - url: https://GITHUB_PRIME_TOKEN@github.com/OpenNMS/opennms-servicenow-plugin.git
+#    start_path: docs
+#    branches: ~
+#    tags:
+#      - v*
+#      - '!v1.0.0'
+#      - '!v1.0.0a'
   - url: https://github.com/OpenNMS/opennms-provisioning-integration-server.git
     start_path: docs
     branches:
