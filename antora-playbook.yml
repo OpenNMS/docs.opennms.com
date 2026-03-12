@@ -86,6 +86,7 @@ content:
   - url: https://github.com/opennms/grafana-plugin.git
     start_path: docs
     branches: 
+      - 'main-12'
       - 'main-9'
   - url: https://github.com/OpenNMS/alec.git
     start_path: docs
