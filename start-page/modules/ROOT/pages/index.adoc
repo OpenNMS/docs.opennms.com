@@ -6,16 +6,14 @@ Highly customizable and scalable, OpenNMS easily integrates with your core busin
 
 == Components
 
-* OpenNMS {distribution}
-** Core (server that drives {distribution})
-** Minion (distritubed monitoring)
-** Sentinel (scale flow processing)
-* Plugin for Grafana, formerly HELM (customized dashboards)
-* Architecture for Learning Enabled Correlation (ALEC) (alarm correlation)
+* OpenNMS Horizon and Meridian
+** Core (server that drives Horizon and Meridian)
+** Minion (distributed monitoring)
+** Sentinel (scalable flow processing)
+* Plugin for Grafana (customized dashboards)
+* Architecture for Learning Enabled Correlation (ALEC) (AI/ML alarm correlation)
 * Provisioning Integration Server (PRIS) (advanced node provisioning)
 * OpenNMS.js (JavaScript library for interacting over REST)
-* Helm Charts (deploy on Kubernetes)
-* Velocloud Plugin (plugin to provision nodes from a Velocloud Orchestrator)
 
 == About this documentation
 
