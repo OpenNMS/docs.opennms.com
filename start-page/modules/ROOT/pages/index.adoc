@@ -11,7 +11,7 @@ Highly customizable and scalable, OpenNMS easily integrates with your core busin
 ** Minion (distributed monitoring)
 ** Sentinel (scalable flow processing)
 * Plugin for Grafana (customized dashboards)
-* Architecture for Learning Enabled Correlation (ALEC) (AI/ML alarm correlation)
+* Architecture for Learning Enabled Correlation (ALEC) (Clustering-based alarm correlation)
 * Provisioning Integration Server (PRIS) (advanced node provisioning)
 * OpenNMS.js (JavaScript library for interacting over REST)
 
