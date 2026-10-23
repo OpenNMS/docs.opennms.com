@@ -54,7 +54,7 @@ jobs:
       - run:
           name: Add SSH server fingerprint
           command: |
-            echo 'core01.opennms.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBHgEs9jRKWp2jwWUUw7dYqPruv+6/zM9f/hcLuFHQwhspK73tLDht6pTyrgcX48IHoARp9LNxUtuce9f3qXsZO0=' >> ~/.ssh/known_hosts
+            echo 'core01.opennms.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKyCLnDVSFZ7rwuKI/E6NTMdn5AaX7dgA4yUK3QfQVH9' >> ~/.ssh/known_hosts
       - run:
           name: Push content to the web server
           command: |
