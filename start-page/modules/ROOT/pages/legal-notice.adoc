@@ -9,4 +9,4 @@ This documentation is licensed under the https://creativecommons.org/licenses/by
 You may copy, redistribute, and adapt it for any purpose, including commercial use, provided that you give appropriate credit and distribute your adaptations under the same license.
 The full license text is available at https://creativecommons.org/licenses/by-sa/4.0/legalcode.
 
-Copyright © 2015-2026 The OpenNMS Group, Inc.
+Copyright © 2002-2026 The OpenNMS Group, Inc.
