@@ -1,12 +1,11 @@
 OpenNMS is the creation of numerous people and organizations, operating under the umbrella of the OpenNMS project.
-The source code is published under the GNU Affero GPL, version 3 or later, and is Copyright © 1999-2026 The OpenNMS Group, Inc.
-
 The current corporate sponsor of OpenNMS is The OpenNMS Group, which also owns the OpenNMS trademark.
 
-Please report any omissions or corrections to this document by creating an issue at http://issues.opennms.org.
+Please report any omissions or corrections to this document by creating an issue at https://issues.opennms.com.
 
-This documentation is licensed under the https://creativecommons.org/licenses/by-sa/4.0/[Creative Commons Attribution-ShareAlike 4.0 International License] (CC BY-SA 4.0).
-You may copy, redistribute, and adapt it for any purpose, including commercial use, provided that you give appropriate credit and distribute your adaptations under the same license.
-The full license text is available at https://creativecommons.org/licenses/by-sa/4.0/legalcode.
+The documentation published on this site is built from several source repositories.
 
-Copyright © 2002-2026 The OpenNMS Group, Inc.
+Each documentation set is licensed under the terms stated in the repository it is built from.
+Refer to the license file in the corresponding repository for the terms that apply to the documentation you are reading.
+
+Copyright © 1999-2026 The OpenNMS Group, Inc.
